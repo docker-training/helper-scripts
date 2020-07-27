@@ -14,7 +14,7 @@ do
 done
 
 PS3="Select which image you'd like to download: "
-options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN210: Docker Enterprise Operations Exercises" "CN230: Kube Native Application Developers Exercises" "CN310: Docker Enterprise Troubleshooting" "CN320: Advanced Kube Ops")
+options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN210: Docker Enterprise Operations Exercises" "CN220: Kube Operations" "CN230: Kube Native Application Developers Exercises" "CN310: Docker Enterprise Troubleshooting" "CN320: Advanced Kube Ops")
 select opt in "${options[@]}"
 do
   case $REPLY in
@@ -47,11 +47,11 @@ do
       break
       ;;
     8)
-      artifact="advanced-kube-ops-exercises-${tag}.tgz"
+      artifact="de-troubleshooting-exercises-${tag}.tgz"
       break
       ;;
     9)
-      artifact="de-troubleshooting-exercises-${tag}.tgz"
+      artifact="advanced-kube-ops-exercises-${tag}.tgz"
       break
       ;;
     *)
@@ -108,12 +108,12 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   8)
-    docker container run --rm -d -p 8894:8080 training/advanced-kube-ops-exercises:${tag}
+    docker container run --rm -d -p 8894:8080 training/de-troubleshooting-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8894"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   9)
-    docker container run --rm -d -p 8895:8080 training/de-troubleshooting-exercises:${tag}
+    docker container run --rm -d -p 8895:8080 training/advanced-kube-ops-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8895"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
