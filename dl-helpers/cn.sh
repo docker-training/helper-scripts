@@ -27,19 +27,31 @@ do
       break
       ;;
     3)
-      artifact="de-operations-exercises-${tag}.tgz"
+      artifact="swarm-essentials-exercises-${tag}.tgz"
       break
       ;;
     4)
-      artifact="kube-native-app-dev-exercises-${tag}.tgz"
+      artifact="kube-essentials-exercises-${tag}.tgz"
       break
       ;;
     5)
-      artifact="de-troubleshooting-exercises-${tag}.tgz"
+      artifact="de-operations-exercises-${tag}.tgz"
       break
       ;;
     6)
+      artifact="kube-ops-exercises-${tag}.tgz"
+      break
+      ;;
+    7)
+      artifact="kube-native-app-dev-exercises-${tag}.tgz"
+      break
+      ;;
+    8)
       artifact="advanced-kube-ops-exercises-${tag}.tgz"
+      break
+      ;;
+    9)
+      artifact="de-troubleshooting-exercises-${tag}.tgz"
       break
       ;;
     *)
@@ -71,33 +83,38 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   3)
-    docker container run --rm -d -p 8888:8080 training/swarm-essentials-exercises:${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8889:8080 training/swarm-essentials-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8889"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   4)
-    docker container run --rm -d -p 8888:8080 training/kube-essentials-exercises:${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8880:8080 training/kube-essentials-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8890"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   5)
-    docker container run --rm -d -p 8888:8080 training/de-operations-exercises:${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8891:8080 training/de-operations-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8891"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   6)
-    docker container run --rm -d -p 8888:8080 training/de-troubleshooting-exercises:${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8892:8080 training/kube-ops-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8892"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   7)
-    docker container run --rm -d -p 8888:8080 training/kube-native-app-dev-exercises:${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8893:8080 training/kube-native-app-dev-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8893"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   8)
-    docker container run --rm -d -p 8888:8080 training/advanced-kube-ops-exercises:${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8894:8080 training/advanced-kube-ops-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8894"
+    echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
+    ;;
+  9)
+    docker container run --rm -d -p 8895:8080 training/de-troubleshooting-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8895"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   *)
