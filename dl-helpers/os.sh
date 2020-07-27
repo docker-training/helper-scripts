@@ -63,13 +63,13 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/openstack-exercises/issues"
     ;;
   3)
-    docker container run --rm -d -p 8888:8080 training/os-admin-and-ops-exercises:os-${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8889:8080 training/os-admin-and-ops-exercises:os-${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8889"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-exercises/issues"
     ;;
   4)
-    docker container run --rm -d -p 8888:8080 training/os-adv-deploy-exercises:os-${tag}
-    echo "exercises live at "$(curl -s icanhazip.com)":8888"
+    docker container run --rm -d -p 8890:8080 training/os-adv-deploy-exercises:os-${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8890"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-exercises/issues"
     ;;
   *)
