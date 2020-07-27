@@ -14,7 +14,7 @@ do
 done
 
 PS3="Select which image you'd like to download: "
-options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN210: Docker Enterprise Operations Exercises" "CN220: Kube Operations" "CN230: Kube Native Application Developers Exercises" "CN310: Docker Enterprise Troubleshooting" "CN320: Advanced Kube Ops")
+options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN210: Docker Enterprise Operations Exercises" "CN220: Kube Operations Exercises" "CN230: Kube Native Application Developers Exercises" "CN310: Docker Enterprise Troubleshooting Exercises" "CN320: Advanced Kube Ops Exercises")
 select opt in "${options[@]}"
 do
   case $REPLY in
