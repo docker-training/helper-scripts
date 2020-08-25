@@ -88,7 +88,7 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   4)
-    docker container run --rm -d -p 8880:8080 training/kube-essentials-exercises:${tag}
+    docker container run --rm -d -p 8890:8080 training/kube-essentials-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8890"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
