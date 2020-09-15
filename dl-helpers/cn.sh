@@ -60,7 +60,6 @@ do
 done
 
 list_asset_url="https://api.github.com/repos/${owner}/${repo}/releases/tags/${tag}"
-echo $list_asset_url
 
 # get url for artifact with name==$artifact
 asset_url=$(curl -H "Authorization: token ${token}" -s "${list_asset_url}" | jq ".assets[] | select(.name==\"${artifact}\") | .url" | sed 's/\"//g')
