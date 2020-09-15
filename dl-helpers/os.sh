@@ -7,7 +7,7 @@ read -sp "GH token, generate at https://github.com/settings/tokens/new, click on
 echo " "
 
 PS3="Select which release you'd like (when in doubt, choose option '1'): "
-options=$(curl -s https://api.github.com/repos/${owner}/${repo}/releases?access_token=${token} | jq '.[] | .name')
+options=$(curl -H "Authorization: token ${token}" -s https://api.github.com/repos/${owner}/${repo}/releases | jq '.[] | .name')
 select tag in $(echo ${options//\"})
 do
   break
@@ -39,13 +39,14 @@ do
   esac
 done
 
-list_asset_url="https://api.github.com/repos/${owner}/${repo}/releases/tags/${tag}?access_token=${token}"
+list_asset_url="https://api.github.com/repos/${owner}/${repo}/releases/tags/${tag}"
 
 # get url for artifact with name==$artifact
-asset_url=$(curl -s "${list_asset_url}" | jq ".assets[] | select(.name==\"${artifact}\") | .url" | sed 's/\"//g')
+asset_url=$(curl -H "Authorization: token ${token}" -s "${list_asset_url}" | jq ".assets[] | select(.name==\"${artifact}\") | .url" | sed 's/\"//g')
+asset_url=$(echo $asset_url | sed "s|https://|https://${token}:@|g")
 
 # download the artifact
-curl -LJO -H 'Accept: application/octet-stream' "${asset_url}?access_token=${token}"
+curl -LJO -H 'Accept: application/octet-stream' "${asset_url}"
 
 # load as docker image
 docker image load -i $artifact
