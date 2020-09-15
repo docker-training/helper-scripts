@@ -52,10 +52,11 @@ echo $list_asset_url
 
 # get url for artifact with name==$artifact
 asset_url=$(curl -H "Authorization: token ${token}" -s "${list_asset_url}" | jq ".assets[] | select(.name==\"${artifact}\") | .url" | sed 's/\"//g')
+asset_url=$(echo $asset_url | sed "s|https://|https://${token}:@|g")
 echo $asset_url
 
 # download the artifact
-curl -LJO -H "Authorization: token ${token}" -H 'Accept: application/octet-stream' "${asset_url}"
+curl -LJO -H 'Accept: application/octet-stream' "${asset_url}"
 
 # load as docker image
 docker image load -i $artifact
