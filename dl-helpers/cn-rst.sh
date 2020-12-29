@@ -14,7 +14,7 @@ do
 done
 
 PS3="Select which image you'd like to download: "
-options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN210: Docker Enterprise Operations Exercises" "CN220: Kube Operations Exercises" "CN230: Kube Native Application Developers Exercises" "CN310: Docker Enterprise Troubleshooting Exercises" "CN320: Advanced Kube Ops Exercises")
+options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN211: Mirantis Container Cloud Exercises" "CN212: Mirantis Kubernetes Engine Exercises" "CN213: Mirantis Secure Registry" "CN220: Kube Operations Exercises" "CN230: Kube Native Application Developers Exercises" "CN320: Advanced Kube Ops Exercises")
 select opt in "${options[@]}"
 do
   case $REPLY in
@@ -35,22 +35,26 @@ do
       break
       ;;
     5)
-      artifact="cn210-exercises-${tag}.tgz"
+      artifact="cn211-exercises-${tag}.tgz"
       break
       ;;
     6)
-      artifact="cn220-exercises-${tag}.tgz"
+      artifact="cn212-exercises-${tag}.tgz"
       break
       ;;
     7)
-      artifact="cn230-exercises-${tag}.tgz"
+      artifact="cn213-exercises-${tag}.tgz"
       break
       ;;
     8)
-      artifact="cn310-exercises-${tag}.tgz"
+      artifact="cn220-exercises-${tag}.tgz"
       break
       ;;
     9)
+      artifact="cn230-exercises-${tag}.tgz"
+      break
+      ;;
+    10)
       artifact="cn320-exercises-${tag}.tgz"
       break
       ;;
@@ -94,28 +98,33 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   5)
-    docker container run --rm -d -p 8891:80 training/cn210-exercises:${tag}
+    docker container run --rm -d -p 8891:80 training/cn211-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8891"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   6)
-    docker container run --rm -d -p 8892:80 training/cn220-exercises:${tag}
+    docker container run --rm -d -p 8892:80 training/cn212-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8892"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   7)
-    docker container run --rm -d -p 8893:80 training/cn230-exercises:${tag}
+    docker container run --rm -d -p 8893:80 training/cn213-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8893"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   8)
-    docker container run --rm -d -p 8894:80 training/cn310-exercises:${tag}
+    docker container run --rm -d -p 8894:80 training/cn220-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8894"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   9)
-    docker container run --rm -d -p 8895:80 training/cn320-exercises:${tag}
+    docker container run --rm -d -p 8895:80 training/cn230-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8895"
+    echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
+    ;;
+  10)
+    docker container run --rm -d -p 8896:80 training/cn320-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8896"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   *)
