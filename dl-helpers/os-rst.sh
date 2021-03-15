@@ -54,22 +54,22 @@ docker image load -i $artifact
 # run image
 case $REPLY in
   1)
-    docker container run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock training/docker-present:os-${tag} -p 8000
+    docker container run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock mirantistraining/docker-present:os-${tag} -p 8000
     echo "slides live at localhost:8000"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-presentations/issues"
     ;;
   2)
-    docker container run --rm -d -p 8888:80 training/os100-exercises:${tag}
+    docker container run --rm -d -p 8888:80 mirantistraining/os100-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8888"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-exercises/issues"
     ;;
   3)
-    docker container run --rm -d -p 8889:80 training/os220-exercises:${tag}
+    docker container run --rm -d -p 8889:80 mirantistraining/os220-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8889"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-exercises/issues"
     ;;
   4)
-    docker container run --rm -d -p 8890:80 training/os320-exercises:${tag}
+    docker container run --rm -d -p 8890:80 mirantistraining/os320-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8890"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-exercises/issues"
     ;;
