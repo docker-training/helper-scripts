@@ -23,15 +23,15 @@ do
       break
       ;;
     2)
-      artifact="os100-exercises-os-${tag}.tgz"
+      artifact="os100-exercises-${tag}.tgz"
       break
       ;;
     3)
-      artifact="os220-exercises-os-${tag}.tgz"
+      artifact="os220-exercises-${tag}.tgz"
       break
       ;;
     4)
-      artifact="os-320-exercises-os-${tag}.tgz"
+      artifact="os-320-exercises-${tag}.tgz"
       break
       ;;
     *)
