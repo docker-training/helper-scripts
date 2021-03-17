@@ -19,7 +19,7 @@ select opt in "${options[@]}"
 do
   case $REPLY in
     1)
-      artifact="slides-os-${tag}.tgz"
+      artifact="slides-${tag}.tgz"
       break
       ;;
     2)
@@ -31,7 +31,7 @@ do
       break
       ;;
     4)
-      artifact="os-320-exercises-${tag}.tgz"
+      artifact="os320-exercises-${tag}.tgz"
       break
       ;;
     *)
@@ -54,7 +54,7 @@ docker image load -i $artifact
 # run image
 case $REPLY in
   1)
-    docker container run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock mirantistraining/docker-present:os-${tag} -p 8000
+    docker container run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock mirantistraining/docker-present:${tag} -p 8000
     echo "slides live at localhost:8000"
     echo "feedback? open an issue at https://github.com/docker-training/openstack-presentations/issues"
     ;;
