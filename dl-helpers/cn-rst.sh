@@ -78,52 +78,52 @@ docker image load -i $artifact
 # run image
 case $REPLY in
   1)
-    docker container run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock training/docker-present:${tag} -p 8000
+    docker container run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock mirantistraining/docker-present:${tag} -p 8000
     echo "slides live at localhost:8000"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-presentations/issues"
     ;;
   2)
-    docker container run --rm -d -p 8888:80 training/cn100-exercises:${tag}
+    docker container run --rm -d -p 8888:80 mirantistraining/cn100-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8888"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   3)
-    docker container run --rm -d -p 8889:80 training/cn110-exercises:${tag}
+    docker container run --rm -d -p 8889:80 mirantistraining/cn110-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8889"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   4)
-    docker container run --rm -d -p 8890:80 training/cn120-exercises:${tag}
+    docker container run --rm -d -p 8890:80 mirantistraining/cn120-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8890"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   5)
-    docker container run --rm -d -p 8891:80 training/cn211-exercises:${tag}
+    docker container run --rm -d -p 8891:80 mirantistraining/cn211-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8891"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   6)
-    docker container run --rm -d -p 8892:80 training/cn212-exercises:${tag}
+    docker container run --rm -d -p 8892:80 mirantistraining/cn212-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8892"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   7)
-    docker container run --rm -d -p 8893:80 training/cn213-exercises:${tag}
+    docker container run --rm -d -p 8893:80 mirantistraining/cn213-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8893"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   8)
-    docker container run --rm -d -p 8894:80 training/cn220-exercises:${tag}
+    docker container run --rm -d -p 8894:80 mirantistraining/cn220-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8894"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   9)
-    docker container run --rm -d -p 8895:80 training/cn230-exercises:${tag}
+    docker container run --rm -d -p 8895:80 mirantistraining/cn230-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8895"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   10)
-    docker container run --rm -d -p 8896:80 training/cn320-exercises:${tag}
+    docker container run --rm -d -p 8896:80 mirantistraining/cn320-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8896"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
