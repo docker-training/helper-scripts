@@ -132,7 +132,7 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   11)
-    docker container run --rm -d -p 8896:80 mirantistraining/mos210-exercises:${tag}
+    docker container run --rm -d -p 8897:80 mirantistraining/mos210-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8897"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;; 
