@@ -14,7 +14,7 @@ do
 done
 
 PS3="Select which image you'd like to download: "
-options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN211: Mirantis Container Cloud Exercises" "CN212: Mirantis Kubernetes Engine Exercises" "CN213: Mirantis Secure Registry" "CN220: Kube Operations Exercises" "CN230: Kube Native Application Developers Exercises" "CN320: Advanced Kube Ops Exercises" "MOS210: Mirantis OpenStack for Kubernetes")
+options=("Slides (all courses)" "CN100: Container Essentials Exercises" "CN110: Swarm Essentials Exercises" "CN120: Kube Essentials Exercises" "CN211: Mirantis Container Cloud Exercises" "CN212: Mirantis Kubernetes Engine Exercises" "CN213: Mirantis Secure Registry" "CN220: Kube Operations Exercises" "CN230: Kube Native Application Developers Exercises" "CN320: Advanced Kube Ops Exercises" "CN330: Advanced Kubernetes Security" "MOS210: Mirantis OpenStack for Kubernetes")
 select opt in "${options[@]}"
 do
   case $REPLY in
@@ -59,6 +59,10 @@ do
       break
       ;;
     11)
+      artifact="cn330-exercises-${tag}.tgz"
+      break
+      ;;
+    12)
       artifact="mos210-exercises-${tag}.tgz"
       break
       ;; 
@@ -132,10 +136,16 @@ case $REPLY in
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;;
   11)
-    docker container run --rm -d -p 8897:80 mirantistraining/mos210-exercises:${tag}
+    docker container run --rm -d -p 8897:80 mirantistraining/cn330-exercises:${tag}
     echo "exercises live at "$(curl -s icanhazip.com)":8897"
+    echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
+    ;;
+  12)
+    docker container run --rm -d -p 8898:80 mirantistraining/mos210-exercises:${tag}
+    echo "exercises live at "$(curl -s icanhazip.com)":8898"
     echo "feedback? open an issue at https://github.com/docker-training/cnc-exercises/issues"
     ;; 
   *)
     echo "bad option, try again"
 esac
+
